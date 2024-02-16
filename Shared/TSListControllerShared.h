@@ -9,6 +9,7 @@
 - (void)installTrollStorePressed;
 - (void)updateTrollStorePressed;
 - (void)rebuildIconCachePressed;
+- (void) userspaceRebootPressed;
 - (void)refreshAppRegistrationsPressed;
 - (void)uninstallPersistenceHelperPressed;
 - (void)handleUninstallation;

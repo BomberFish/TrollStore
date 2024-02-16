@@ -1,6 +1,7 @@
 #import "TSListControllerShared.h"
 #import "TSUtil.h"
 #import "TSPresentationDelegate.h"
+#include "userspace_reboot.h"
 
 @implementation TSListControllerShared
 
@@ -149,6 +150,11 @@
 			[TSPresentationDelegate stopActivityWithCompletion:nil];
 		});
 	});
+}
+
+- (void) userspaceRebootPressed
+{
+	userspaceReboot();
 }
 
 - (void)uninstallPersistenceHelperPressed

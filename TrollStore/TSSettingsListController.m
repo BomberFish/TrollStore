@@ -143,6 +143,19 @@ extern NSUserDefaults* trollStoreUserDefaults(void);
 
 		[_specifiers addObject:rebuildIconCacheSpecifier];
 
+		PSSpecifier* rebuildIconCacheSpecifier = [PSSpecifier preferenceSpecifierNamed:@"Userspace Reboot"
+											target:self
+											set:nil
+											get:nil
+											detail:nil
+											cell:PSButtonCell
+											edit:nil];
+		 rebuildIconCacheSpecifier.identifier = @"reboot";
+		[rebuildIconCacheSpecifier setProperty:@YES forKey:@"enabled"];
+		rebuildIconCacheSpecifier.buttonAction = @selector(userspaceRebootPressed);
+
+		[_specifiers addObject:rebuildIconCacheSpecifier];
+
 		//if (@available(iOS 16, *)) { } else {
 			NSString* ldidPath = [NSBundle.mainBundle.bundlePath stringByAppendingPathComponent:@"ldid"];
 			NSString* ldidVersionPath = [NSBundle.mainBundle.bundlePath stringByAppendingPathComponent:@"ldid.version"];
